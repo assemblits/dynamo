@@ -1,0 +1,10 @@
+### Intellij ###
+# User-specific stuff:
+.idea/
+# Outputs
+out/
+*.class
+*.iml
+build/
+.gradle/
+classes/
