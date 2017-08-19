@@ -10,7 +10,7 @@ import javafx.util.Duration;
 /**
  * Created by mtrujillo on 5/16/2016.
  */
-public class Dynamo extends Control implements Highlighted {
+public abstract class Dynamo extends Control implements Highlighted {
 
     private FadeTransition fadeTransitionForHighlight;
     private Boolean        highlighted;
