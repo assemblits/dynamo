@@ -1,6 +1,6 @@
 package inside;
 
-import com.eru.scene.control.*;
+import com.eru.dynamo.control.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
