@@ -1,7 +1,31 @@
 apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+group = "com.github.assemblits"
+archivesBaseName = "dynamo"
+version = "1.0.0-SNAPSHOT"
 
 jar {
     baseName = 'dynamo'
+}
+
+task javadocJar(type: Jar) {
+    classifier = 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
 }
 
 sourceCompatibility = 1.8
@@ -24,3 +48,55 @@ dependencies {
     compile "org.jfxtras:jfxtras-menu:${jfxtrasVersion}"
 }
 
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'Dynamo'
+                packaging 'jar'
+                url 'https://github.com/assemblits/dynamo'
+
+                scm {
+                    connection 'scm:git:https://github.com/assemblits/dynamo.git'
+                    developerConnection 'scm:svn:https://github.com/assemblits/dynamo.git'
+                    url 'https://github.com/assemblits/dynamo.git'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'marlontrujillo1080'
+                        name 'Marlon Trujillo'
+                        email 'marlontrujillo1080@gmail.com'
+                    }
+                    developer {
+                        id 'megaprog'
+                        name 'Rafael R. S. Robles'
+                        email 'megaprog@gmail.com'
+                    }
+                    developer {
+                        id 'gilbertojrequena'
+                        name 'Gilberto Requena'
+                        email 'gilbertojrequena@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
