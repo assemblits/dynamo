@@ -4,7 +4,7 @@
 
 Dynamic objects to eru SCADA.
 
-###Working locally
+### Working locally
 In order to build the artifact locally run:
 
 ```gradle build -x signArchives```
