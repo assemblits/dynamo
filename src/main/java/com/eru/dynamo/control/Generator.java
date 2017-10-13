@@ -2,12 +2,13 @@ package com.eru.dynamo.control;
 
 import com.eru.dynamo.control.skin.GeneratorSkin;
 import javafx.beans.property.*;
+import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 
 /**
  * Created by mtrujillo on 09/02/2015.
  */
-public class Generator extends Dynamo {
+public class Generator extends Control {
 
     public static final int DEFAULT_ANIMATION_DURATION = 2500;
 
