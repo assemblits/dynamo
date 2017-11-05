@@ -1,18 +1,34 @@
+/******************************************************************************
+ * Copyright (c) 2017 Assemblits contributors                                 *
+ *                                                                            *
+ * This file is part of Dynamo: Dynamic JavaFX control objects                *
+ * by Assemblits Organization.                                                *
+ *                                                                            *
+ * Dynamo: Dynamic JavaFX control objects is free software: you can           *
+ * redistribute it and/or modify it under the terms of the GNU General        *
+ * Public License as published by the Free Software Foundation, either        *
+ * version 3 of the License, or (at your option) any later version.
+ *                                                                            *
+ * Dynamo is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of             *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              *
+ * GNU General Public License for more details.                               *
+ *                                                                            *
+ * You should have received a copy of the GNU General Public License          *
+ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.            *
+ ******************************************************************************/
 package org.assemblits.dynamo.control;
 
-import org.assemblits.dynamo.control.skin.DisplaySkin;
 import javafx.application.Platform;
 import javafx.beans.property.*;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import org.assemblits.dynamo.control.skin.DisplaySkin;
 
 import java.util.concurrent.*;
 
-/**
- * Created by mtrujillo on 18/06/2014.
- */
 public class Display extends Control {
 
     /* ********** Static Fields ********** */

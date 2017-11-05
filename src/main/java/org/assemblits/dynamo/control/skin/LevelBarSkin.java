@@ -1,7 +1,24 @@
+/******************************************************************************
+ * Copyright (c) 2017 Assemblits contributors                                 *
+ *                                                                            *
+ * This file is part of Dynamo: Dynamic JavaFX control objects                *
+ * by Assemblits Organization.                                                *
+ *                                                                            *
+ * Dynamo: Dynamic JavaFX control objects is free software: you can           *
+ * redistribute it and/or modify it under the terms of the GNU General        *
+ * Public License as published by the Free Software Foundation, either        *
+ * version 3 of the License, or (at your option) any later version.
+ *                                                                            *
+ * Dynamo is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of             *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              *
+ * GNU General Public License for more details.                               *
+ *                                                                            *
+ * You should have received a copy of the GNU General Public License          *
+ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.            *
+ ******************************************************************************/
 package org.assemblits.dynamo.control.skin;
 
-import org.assemblits.dynamo.control.LevelBar;
-import org.assemblits.dynamo.util.Section;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -18,15 +35,14 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
+import org.assemblits.dynamo.control.LevelBar;
 import org.assemblits.dynamo.fonts.Fonts;
+import org.assemblits.dynamo.util.Section;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-/**
- * Created by mtrujillo on 23/06/2014.
- */
 public class LevelBarSkin extends SkinBase<LevelBar> {
     private static final double         PREFERRED_WIDTH                = 120;
     private static final double         PREFERRED_HEIGHT               = 200;

@@ -2,6 +2,7 @@ package inside;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.assemblits.dynamo.control.*;
@@ -16,23 +17,20 @@ public class DynamoTest extends Application {
     public void start(final Stage primaryStage) {
         GridPane gridPane = new GridPane();
         gridPane.setStyle("-fx-background-color: #252525");
+        gridPane.setHgap(5.0);
+        gridPane.setGridLinesVisible(true);
 
-        gridPane.add(new Gauge(),       0, 0);
-        gridPane.add(new Alarm(),       1, 0);
-        gridPane.add(new Display(),     2, 0);
-        gridPane.add(new Gauge(),       3, 0);
-        gridPane.add(new Generator(),   4, 0);
-        gridPane.add(new LevelBar(),    0, 1);
-        gridPane.add(new Load(),        1, 1);
-        gridPane.add(new Radial(),      2, 1);
-        gridPane.add(new Switch(),      3, 1);
-        gridPane.add(new Transformer(), 4, 1);
-
+        gridPane.add(new AnchorPane(new Alarm()),       0, 0);
+        gridPane.add(new AnchorPane(new Display()),     1, 0);
+        gridPane.add(new AnchorPane(new Generator()),   2, 0);
+        gridPane.add(new AnchorPane(new LevelBar()),    3, 0);
+        gridPane.add(new AnchorPane(new Load()),        4, 0);
+        gridPane.add(new AnchorPane(new Switch()),      5, 0);
+        gridPane.add(new AnchorPane(new Transformer()), 6, 0);
 
         Scene scene = new Scene(gridPane);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
-
 
 }

@@ -1,6 +1,24 @@
+/******************************************************************************
+ * Copyright (c) 2017 Assemblits contributors                                 *
+ *                                                                            *
+ * This file is part of Dynamo: Dynamic JavaFX control objects                *
+ * by Assemblits Organization.                                                *
+ *                                                                            *
+ * Dynamo: Dynamic JavaFX control objects is free software: you can           *
+ * redistribute it and/or modify it under the terms of the GNU General        *
+ * Public License as published by the Free Software Foundation, either        *
+ * version 3 of the License, or (at your option) any later version.
+ *                                                                            *
+ * Dynamo is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of             *
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the              *
+ * GNU General Public License for more details.                               *
+ *                                                                            *
+ * You should have received a copy of the GNU General Public License          *
+ * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.            *
+ ******************************************************************************/
 package org.assemblits.dynamo.control.skin;
 
-import org.assemblits.dynamo.control.Switch;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -13,10 +31,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
+import org.assemblits.dynamo.control.Switch;
 
-/**
- * Created by mtrujillo on 09/02/2015.
- */
 public class SwitchSkin extends SkinBase<Switch> {
 
     private static final double PREFERRED_HEIGHT = 40;
