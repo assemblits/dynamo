@@ -1,5 +1,5 @@
 .level-bar {
-    -fx-skin           : "com.eru.scene.control.skin.LevelBarSkin";
+    -fx-skin           : "org.assemblits.dynamo.control.skin.LevelBarSkin";
 }
 
 .level-bar .main {

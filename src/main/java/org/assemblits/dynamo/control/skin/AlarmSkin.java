@@ -9,9 +9,6 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import org.assemblits.dynamo.control.Alarm;
 
-/**
- * Created by mtrujillo on 07/07/2014.
- */
 public class AlarmSkin extends SkinBase<Alarm> {
     /* ********** Fields ********** */
     private static final double PREFERRED_HEIGHT = 24;
