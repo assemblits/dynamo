@@ -5,7 +5,7 @@ apply plugin: 'signing'
 group = "com.github.assemblits"
 archivesBaseName = "dynamo"
 description ='Dynamic JavaFX control objects'
-version = "1.0.1"
+version = "1.0.2"
 
 jar {
     baseName = 'dynamo'
@@ -65,6 +65,7 @@ uploadArchives {
             pom.project {
                 name 'Dynamo'
                 packaging 'jar'
+                description 'Dynamic JavaFX control objects'
                 url 'https://github.com/assemblits/dynamo'
 
                 scm {
