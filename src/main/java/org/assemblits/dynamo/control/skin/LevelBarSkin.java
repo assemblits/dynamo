@@ -1,7 +1,7 @@
-package com.eru.dynamo.control.skin;
+package org.assemblits.dynamo.control.skin;
 
-import com.eru.dynamo.control.LevelBar;
-import com.eru.dynamo.util.Section;
+import org.assemblits.dynamo.control.LevelBar;
+import org.assemblits.dynamo.util.Section;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -18,7 +18,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.util.Duration;
-import com.eru.dynamo.fonts.Fonts;
+import org.assemblits.dynamo.fonts.Fonts;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;

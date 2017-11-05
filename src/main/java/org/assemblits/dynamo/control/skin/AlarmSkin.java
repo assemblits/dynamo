@@ -1,4 +1,4 @@
-package com.eru.dynamo.control.skin;
+package org.assemblits.dynamo.control.skin;
 
 import javafx.geometry.VPos;
 import javafx.scene.control.SkinBase;
@@ -7,7 +7,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import com.eru.dynamo.control.Alarm;
+import org.assemblits.dynamo.control.Alarm;
 
 /**
  * Created by mtrujillo on 07/07/2014.

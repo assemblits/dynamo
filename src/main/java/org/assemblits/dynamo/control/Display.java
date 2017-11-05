@@ -1,6 +1,6 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
-import com.eru.dynamo.control.skin.DisplaySkin;
+import org.assemblits.dynamo.control.skin.DisplaySkin;
 import javafx.application.Platform;
 import javafx.beans.property.*;
 import javafx.scene.control.Control;

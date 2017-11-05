@@ -1,4 +1,4 @@
-package com.eru.dynamo.control.skin;
+package org.assemblits.dynamo.control.skin;
 
 import javafx.animation.*;
 import javafx.geometry.VPos;
@@ -9,7 +9,7 @@ import javafx.scene.layout.Region;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import com.eru.dynamo.control.Generator;
+import org.assemblits.dynamo.control.Generator;
 
 /**
  * Created by mtrujillo on 09/02/2015.

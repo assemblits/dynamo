@@ -1,10 +1,10 @@
 package inside;
 
-import com.eru.dynamo.control.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.assemblits.dynamo.control.*;
 
 public class DynamoTest extends Application {
 

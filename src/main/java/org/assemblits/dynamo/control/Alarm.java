@@ -1,6 +1,6 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
-import com.eru.dynamo.control.skin.AlarmSkin;
+import org.assemblits.dynamo.control.skin.AlarmSkin;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.BooleanPropertyBase;
 import javafx.beans.property.SimpleStringProperty;

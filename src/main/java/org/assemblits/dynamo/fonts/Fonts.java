@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.eru.dynamo.fonts;
+package org.assemblits.dynamo.fonts;
 
 import javafx.scene.text.Font;
 

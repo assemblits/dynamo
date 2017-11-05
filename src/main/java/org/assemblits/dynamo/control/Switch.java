@@ -1,9 +1,9 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
 import javafx.beans.property.*;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
-import com.eru.dynamo.control.skin.SwitchSkin;
+import org.assemblits.dynamo.control.skin.SwitchSkin;
 
 /**
  * Created by mtrujillo on 09/02/2015.

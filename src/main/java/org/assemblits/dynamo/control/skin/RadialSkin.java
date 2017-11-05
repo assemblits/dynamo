@@ -1,7 +1,7 @@
-package com.eru.dynamo.control.skin;
+package org.assemblits.dynamo.control.skin;
 
-import com.eru.dynamo.fonts.Fonts;
-import com.eru.dynamo.util.Section;
+import org.assemblits.dynamo.fonts.Fonts;
+import org.assemblits.dynamo.util.Section;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -28,7 +28,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.scene.transform.Rotate;
 import javafx.util.Duration;
-import com.eru.dynamo.control.Radial;
+import org.assemblits.dynamo.control.Radial;
 
 import java.time.Instant;
 import java.util.Locale;

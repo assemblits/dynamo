@@ -1,6 +1,6 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
-import com.eru.dynamo.util.Section;
+import org.assemblits.dynamo.util.Section;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,7 +8,7 @@ import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
-import com.eru.dynamo.control.skin.LevelBarSkin;
+import org.assemblits.dynamo.control.skin.LevelBarSkin;
 
 import java.util.Arrays;
 import java.util.List;

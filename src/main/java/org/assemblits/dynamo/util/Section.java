@@ -1,4 +1,4 @@
-package com.eru.dynamo.util;
+package org.assemblits.dynamo.util;
 
 import javafx.beans.property.*;
 import javafx.scene.image.Image;

@@ -1,6 +1,6 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
-import com.eru.dynamo.control.skin.LoadSkin;
+import org.assemblits.dynamo.control.skin.LoadSkin;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;

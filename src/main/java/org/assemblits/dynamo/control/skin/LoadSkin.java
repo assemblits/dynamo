@@ -1,23 +1,19 @@
-package com.eru.dynamo.control.skin;
+package org.assemblits.dynamo.control.skin;
 
-import com.eru.dynamo.control.Switch;
-import javafx.animation.Interpolator;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.geometry.VPos;
 import javafx.scene.control.SkinBase;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.transform.Rotate;
-import javafx.util.Duration;
+import org.assemblits.dynamo.control.Load;
 
 /**
  * Created by mtrujillo on 09/02/2015.
  */
-public class SwitchSkin extends SkinBase<Switch> {
+public class LoadSkin extends SkinBase<Load> {
+
+    public boolean HOLIS;
 
     private static final double PREFERRED_HEIGHT = 40;
     private static final double PREFERRED_WIDTH = 40;
@@ -25,36 +21,21 @@ public class SwitchSkin extends SkinBase<Switch> {
     private static final double MINIMUM_HEIGHT = 5;
     private static final double MAXIMUM_WIDTH = 1024;
     private static final double MAXIMUM_HEIGHT = 1024;
-    private static final double BAR_WIDTH_SIZE_FACTOR = 0.1;
-    private static final double BAR_HEIGHT_SIZE_FACTOR = 0.25;
     private static final double NAME_TEXT_SIZE_FACTOR = 0.5;
-    private static double       angleInOpenPosition;
-    private static final double ANGLE_IN_CLOSED_POSITION = 180;
-    private final Timeline      timeline                       = new Timeline();
     private double width;
     private double height;
     private double size;
-    private double centerX;
-    private double centerY;
-    private double barWidth;
-    private double barHeight;
-    private double mobileBarHeight;
-    private double xDistanceToCenterBar;
 
     private Region  background;
-    private Region  upBar;
-    private Region  downBar;
-    private Region  mobileBar;
+    private Region  load;
     private Text    name;
     private Pane    pane;
 
-    private Rotate barRotate;
-
-    public SwitchSkin(){
-        super(new Switch());
+    public LoadSkin(){
+        super(new Load());
     }
 
-    public SwitchSkin(Switch control) {
+    public LoadSkin(Load control) {
         super(control);
         initDimension();
         initGraphics();
@@ -86,22 +67,13 @@ public class SwitchSkin extends SkinBase<Switch> {
         background = new Region();
         background.getStyleClass().setAll("background");
 
-        upBar = new Region();
-        upBar.getStyleClass().setAll("up-bar");
-
-        downBar = new Region();
-        downBar.getStyleClass().setAll("down-bar");
-
-        barRotate = new Rotate(ANGLE_IN_CLOSED_POSITION);
-
-        mobileBar = new Region();
-        mobileBar.getStyleClass().setAll("mobile-bar");
-        mobileBar.getTransforms().add(barRotate);
+        load = new Region();
+        load.getStyleClass().addAll("load-shape");
 
         name = new Text(getSkinnable().getName());
         name.getStyleClass().setAll("name-text");
 
-        pane = new Pane(background, upBar, downBar, mobileBar, name);
+        pane = new Pane(background, load, name);
 
         getChildren().add(pane);
         resize();
@@ -113,7 +85,6 @@ public class SwitchSkin extends SkinBase<Switch> {
         getSkinnable().widthProperty().addListener(observable -> handleControlPropertyChanged("RESIZE"));
         getSkinnable().heightProperty().addListener(observable -> handleControlPropertyChanged("RESIZE"));
         getSkinnable().energizedProperty().addListener(observable -> handleControlPropertyChanged("ENERGIZED"));
-        getSkinnable().closedProperty().addListener(observable ->  handleControlPropertyChanged("CLOSED"));
     }
 
 
@@ -124,9 +95,6 @@ public class SwitchSkin extends SkinBase<Switch> {
                 resize();
                 break;
             case "ENERGIZED":
-                updateState();
-                break;
-            case "CLOSED":
                 updateState();
                 break;
         }
@@ -176,29 +144,10 @@ public class SwitchSkin extends SkinBase<Switch> {
         height = getSkinnable().getHeight();
 
         if (width > 0 && height > 0) {
-
-            centerX                 = width * 0.5;
-            centerY                 = height * 0.5;
-            barWidth                = width * BAR_WIDTH_SIZE_FACTOR;
-            barHeight               = height * BAR_HEIGHT_SIZE_FACTOR;
-            barWidth                = barWidth > barHeight ? barHeight : barWidth;
-            mobileBarHeight         = height - (barHeight*2);
-            xDistanceToCenterBar    = centerX - ((barWidth)/2);
+            size    = getSkinnable().getWidth() < getSkinnable().getHeight() ? getSkinnable().getWidth() : getSkinnable().getHeight();
 
             background.setPrefSize(width, height);
-
-            upBar.setPrefSize(barWidth, barHeight);
-            upBar.setTranslateX(xDistanceToCenterBar);
-            upBar.setTranslateY(0);
-
-            mobileBar.setPrefSize(barWidth, mobileBarHeight);
-            mobileBar.setTranslateX(xDistanceToCenterBar + barWidth);
-            mobileBar.setTranslateY(height - barHeight);
-            angleInOpenPosition = 180 + Math.toDegrees(Math.atan(barWidth/mobileBarHeight)) * 3;
-
-            downBar.setPrefSize(barWidth, barHeight);
-            downBar.setTranslateX(xDistanceToCenterBar);
-            downBar.setTranslateY(height - barHeight);
+            load.setPrefSize(width, height);
 
             name.setText(getSkinnable().getName());
             name.setFont(Font.font(size*NAME_TEXT_SIZE_FACTOR));
@@ -210,18 +159,6 @@ public class SwitchSkin extends SkinBase<Switch> {
     }
 
     private void updateState() {
-        upBar.setStyle(getSkinnable().getEnergized() ? "-fx-background-color:-energized-color" : "-fx-background-color:-de-energized-color");
-        downBar.setStyle(getSkinnable().getEnergized() ? "-fx-background-color:-energized-color" : "-fx-background-color:-de-energized-color");
-        mobileBar.setStyle(getSkinnable().getEnergized() ? "-fx-background-color:-energized-color" : "-fx-background-color:-de-energized-color");
-
-        if (getSkinnable().getAnimated()) {
-            timeline.stop();
-            final KeyValue KEY_VALUE = new KeyValue(barRotate.angleProperty(), getSkinnable().getClosed() ? ANGLE_IN_CLOSED_POSITION : angleInOpenPosition, Interpolator.EASE_BOTH);
-            final KeyFrame KEY_FRAME = new KeyFrame(Duration.millis(getSkinnable().getAnimationDuration()), KEY_VALUE);
-            timeline.getKeyFrames().setAll(KEY_FRAME);
-            timeline.play();
-        } else {
-            barRotate.setAngle(getSkinnable().getClosed() ? ANGLE_IN_CLOSED_POSITION : angleInOpenPosition);
-        }
+        load.setStyle(getSkinnable().getEnergized() ? "-fx-background-color:-energized-color" : "-fx-background-color:-de-energized-color");
     }
 }

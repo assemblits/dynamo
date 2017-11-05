@@ -1,6 +1,6 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
-import com.eru.dynamo.control.skin.GeneratorSkin;
+import org.assemblits.dynamo.control.skin.GeneratorSkin;
 import javafx.beans.property.*;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;

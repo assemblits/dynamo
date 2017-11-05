@@ -1,7 +1,7 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
-import com.eru.dynamo.control.skin.RadialSkin;
-import com.eru.dynamo.util.Section;
+import org.assemblits.dynamo.control.skin.RadialSkin;
+import org.assemblits.dynamo.util.Section;
 import com.sun.javafx.css.converters.PaintConverter;
 import javafx.animation.AnimationTimer;
 import javafx.beans.property.*;

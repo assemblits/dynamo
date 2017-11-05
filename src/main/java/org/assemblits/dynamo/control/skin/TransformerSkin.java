@@ -1,6 +1,6 @@
-package com.eru.dynamo.control.skin;
+package org.assemblits.dynamo.control.skin;
 
-import com.eru.dynamo.control.Transformer;
+import org.assemblits.dynamo.control.Transformer;
 import javafx.geometry.VPos;
 import javafx.scene.control.SkinBase;
 import javafx.scene.layout.Pane;

@@ -1,4 +1,4 @@
-package com.eru.dynamo.control;
+package org.assemblits.dynamo.control;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -6,7 +6,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.scene.control.Control;
 import javafx.scene.control.Skin;
-import com.eru.dynamo.control.skin.TransformerSkin;
+import org.assemblits.dynamo.control.skin.TransformerSkin;
 
 /**
  * Created by mtrujillo on 09/02/2015.
